@@ -1,0 +1,13 @@
+streamlit
+docling
+chromadb
+python-dotenv
+pymupdf
+pillow
+requests
+pdf2image
+huggingface_hub
+torch
+torchvision
+sentence-transformers
+
