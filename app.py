@@ -15,6 +15,7 @@ from utils.vector_store import VectorStore
 from utils.rag_engine import RAGEngine
 from utils.pdf_cache import PDFCache
 
+
 try:
     from config import Config
     USE_CONFIG = True
@@ -60,7 +61,7 @@ def load_custom_css():
         max-width: 1400px;
     }
     
-    /* Sidebar styling */
+        /* Sidebar styling */
     [data-testid="stSidebar"] {
         background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
         padding: 1.5rem 1rem;
@@ -563,8 +564,8 @@ def main():
                                                 st.image(image, use_container_width=True)
                     
                     # Add assistant message to history
-                    st.session_state.chat_history.append({
-                        "role": "assistant",
+                st.session_state.chat_history.append({
+                    "role": "assistant",
                         "content": response["answer"],
                         "citations": citations,
                         "model_used": model_used
