@@ -15,11 +15,11 @@ An intelligent PDF question-answering system powered by AI that understands both
 
 - **Docling**: PDF to Markdown conversion
 - **Qwen2.5-VL-7B-Instruct**: Advanced AI-powered image understanding via HuggingFace
-- **Qwen2.5-72B-Instruct**: Natural language chat responses via HuggingFace
-- **EmbeddingGemma**: Google's embedding model for semantic search
+- **Qwen2.5-7B-Instruct**: Natural language chat responses via HuggingFace
+- **all-MiniLM-L6-v2**: Local embedding model for semantic search (runs on device)
 - **ChromaDB**: Vector database for storing embeddings
 - **Streamlit**: Interactive web interface
-- **HuggingFace API**: Unified API for all AI models
+- **HuggingFace API**: API for chat and vision models
 
 ## Setup
 
@@ -83,7 +83,7 @@ nlp_rag/
 │   ├── pdf_processor.py        # PDF text & image extraction
 │   ├── image_describer.py      # Image description with Qwen VL
 │   ├── vector_store.py         # ChromaDB vector storage
-│   └── rag_engine.py           # RAG logic with Gemini
+│   └── rag_engine.py           # RAG logic with Qwen2.5-7B
 ├── extracted_images/           # Extracted PDF images (auto-created)
 └── chroma_db/                  # Vector database (auto-created)
 ```
@@ -108,7 +108,7 @@ nlp_rag/
 4. **Question Answering**
    - Retrieves relevant chunks based on query
    - Formats context with text and image info
-   - Generates answer using Qwen
+   - Generates answer using Qwen2.5-7B-Instruct
    - Returns answer with citations and images
 
 ## Example Questions
@@ -121,9 +121,10 @@ nlp_rag/
 ## Notes
 
 - First-time processing may take a few minutes depending on PDF size
-- Image descriptions require HuggingFace API credits
-- Gemini API has rate limits on the free tier
+- Image descriptions and chat responses require HuggingFace API credits
+- HuggingFace API has rate limits on the free tier
 - Extracted images are stored locally in `extracted_images/`
+- Embeddings run locally (no API costs)
 
 ## Troubleshooting
 
@@ -134,6 +135,11 @@ nlp_rag/
 **Image Descriptions Not Working:**
 - Verify your HuggingFace API key is valid
 - Check if you have API credits/quota remaining
+
+**Chat Responses Error:**
+- Verify your HuggingFace API key is correct
+- Check HuggingFace API quota limits
+- Ensure you have access to Qwen models on HuggingFace
 
 ## License
 
