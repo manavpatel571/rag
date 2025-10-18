@@ -108,7 +108,7 @@ nlp_rag/
 4. **Question Answering**
    - Retrieves relevant chunks based on query
    - Formats context with text and image info
-   - Generates answer using Gemini 2.0 Flash
+   - Generates answer using Qwen
    - Returns answer with citations and images
 
 ## Example Questions
@@ -134,10 +134,6 @@ nlp_rag/
 **Image Descriptions Not Working:**
 - Verify your HuggingFace API key is valid
 - Check if you have API credits/quota remaining
-
-**Chat Responses Error:**
-- Verify your Google API key is correct
-- Check Gemini API quota limits
 
 ## License
 
